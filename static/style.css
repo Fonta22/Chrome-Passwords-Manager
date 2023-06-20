@@ -1,0 +1,10 @@
+.spoiler {
+    background-color: rgb(20, 20, 20);
+    color: transparent;
+    padding: .1rem .25rem .1rem .25rem;
+}
+
+.spoiler:hover {
+    color: currentColor;
+    border: currentColor;
+}
