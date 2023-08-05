@@ -13,15 +13,6 @@
     </h2>
 
     {% for login in login_data %}
-    {% if request.MOBILE %}
-    <div class="card mb-3 shadow" style="width: 100%;">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Url: <a href="{{login.url}}">{{login.url}}</a></li>
-            <li class="list-group-item">Username: <code>{{login.username}}</code></li>
-            <li class="list-group-item">Password: <span class="spoiler rounded">{{login.password}}</span></li>
-        </ul>
-    </div>
-    {% else %}
     <div class="card mb-3 shadow" style="width: 50%;">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Url: <a href="{{login.url}}">{{login.url}}</a></li>
@@ -29,7 +20,6 @@
             <li class="list-group-item">Password: <span class="spoiler rounded">{{login.password}}</span></li>
         </ul>
     </div>
-    {% endif %}
     {% endfor %}
 </body>
 </html>
