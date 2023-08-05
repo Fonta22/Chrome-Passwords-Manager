@@ -1,5 +1,5 @@
 # Chrome-Password-Manager
-Flask based web application to the **Google Chrome** saved passwords in your computer.
+Flask based web application to see the **Google Chrome** saved passwords in your computer.
 
 ## Usage
 
