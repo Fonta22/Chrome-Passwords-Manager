@@ -15,7 +15,9 @@ View and manage your **Google Chrome** saved passwords.
 - Run `decrypter.py` and show them in a **Flask app**.
 
 ## Flask app
-- app.py
-    - Entry point
-- templates/
-- static/
+- `app.py`
+    - Flask app entry point
+- `templates/index.html`
+    - Main page
+- `static/style.css`
+    - Stylesheet
