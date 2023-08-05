@@ -1,4 +1,10 @@
+# Python cache files
 /__pycache__/
 /decrypter/__pycache__/
 *.pyc
+
+# Database
 *.db
+
+# Tets
+*test*
