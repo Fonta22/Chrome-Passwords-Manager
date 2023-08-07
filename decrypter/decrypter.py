@@ -39,24 +39,27 @@ conn.close()
 os.remove(db_name)
 
 # Main function
-def decrypt():
-    decrypted_login_data = []
+class Decrypter:
+    
+    @staticmethod
+    def decrypt():
+        decrypted_login_data = []
 
-    for login in login_data:
-        initialisation_vector = login["ciphertext"][3:15]
-        encrypted_password = login["ciphertext"][15:-16]
-        
-        cipher = AES.new(encryption_key, AES.MODE_GCM, initialisation_vector)
-        decrypted_password = cipher.decrypt(encrypted_password)
-        decrypted_password = decrypted_password.decode()
+        for login in login_data:
+            initialisation_vector = login["ciphertext"][3:15]
+            encrypted_password = login["ciphertext"][15:-16]
+            
+            cipher = AES.new(encryption_key, AES.MODE_GCM, initialisation_vector)
+            decrypted_password = cipher.decrypt(encrypted_password)
+            decrypted_password = decrypted_password.decode()
 
-        decrypted_login_data.append({
-            "url": login["url"],
-            "username": login["username"],
-            "password": decrypted_password
-        })
+            decrypted_login_data.append({
+                "url": login["url"],
+                "username": login["username"],
+                "password": decrypted_password
+            })
 
-    return decrypted_login_data
+        return decrypted_login_data
 
 if __name__ == '__main__':
-    print(decrypt())
+    print(Decrypter.decrypt())

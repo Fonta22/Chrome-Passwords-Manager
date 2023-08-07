@@ -1,10 +1,10 @@
 from flask import Flask, render_template
-from decrypter.decrypter import decrypt
+from decrypter.decrypter import Decrypter
 
 app = Flask(__name__)
 port = 8888
 
-login_data = decrypt()
+login_data = Decrypter.decrypt()
 
 @app.route('/')
 def home():
