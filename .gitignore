@@ -3,11 +3,11 @@
 /decrypter/__pycache__/
 *.pyc
 
+# Deprecated files
+/decrypter/deprecated/
+
 # Database
 *.db
 
-# Tets
+# Tests
 *test*
-
-# Deprecated files
-/decrypter/deprecated/
