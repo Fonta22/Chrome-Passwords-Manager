@@ -1,8 +1,9 @@
+import sys
 from flask import Flask, render_template
 from decrypter.decrypter import PasswordDecrypter
 
 app = Flask(__name__)
-port = 8888
+port = sys.argv[1]
 
 decrypter = PasswordDecrypter()
 login_data = decrypter.main()
